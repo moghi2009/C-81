@@ -1,30 +1,37 @@
-var canvas = document.getElementById("my_canvas");
+var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-var color = "green";
+var circle1_color = "blue";
+var circle2_color = "yellow";
+var circle3_color = "black";
+var circle4_color = "green";
+var circle5_color = "red";
 
 ctx.beginPath();
-ctx.strokeStyle = color;
-ctx.lineWidth = 2;
-ctx.arc(300, 300, 40, 0, 2*Math.PI);
+ctx.strokeStyle = circle1_color;
+ctx.lineWidth = 8;
+ctx.arc(290, 280, 90, 0, 2*Math.PI);
 ctx.stroke();
-canvas.addEventListener("mousedown", myMouseDown);
-function myMouseDown(e){
-    color = document.getElementById("color").value;
-    console.log(color);
-    mouse_x = e.clientX - canvas.offsetLeft;
-    mouse_y = e.clientY - canvas.offsetTop;
-    console.log("X = "+ mouse_x + ", Y = "+ mouse_y);
 
-    circle(mouse_x, mouse_y);
-}
-function circle(mouse_x, mouse_y){
-    ctx.beginPath();
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
-    ctx.arc(mouse_x, mouse_y, 40, 0, 2*Math.PI);
-    ctx.stroke();
-}
+ctx.beginPath();
+ctx.strokeStyle = circle2_color;
+ctx.lineWidth = 8;
+ctx.arc(390, 380, 90, 0, 2*Math.PI);
+ctx.stroke();
 
-function cleararea(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
+ctx.beginPath();
+ctx.strokeStyle = circle3_color;
+ctx.lineWidth = 8;
+ctx.arc(490, 280, 90, 0, 2*Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.strokeStyle = circle4_color;
+ctx.lineWidth = 8;
+ctx.arc(590, 380, 90, 0, 2*Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.strokeStyle = circle5_color;
+ctx.lineWidth = 8;
+ctx.arc(690, 280, 90, 0, 2*Math.PI);
+ctx.stroke();
